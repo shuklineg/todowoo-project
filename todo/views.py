@@ -31,7 +31,7 @@ def loginuser(request):
 
     form = AuthenticationForm(request, data=request.POST)
 
-    if not form.is_valid():
+    if form.is_valid():
         login(request, form.get_user())
         return redirect('currenttodos')
 
